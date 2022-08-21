@@ -147,6 +147,12 @@ class _CapsGuest(XMLBuilder):
             if d.hypervisor_type == "kvm":
                 return True
         return False
+        
+    def is_hvf_available(self):
+        for d in self.domains:
+            if d.hypervisor_type == "hvf":
+                return True
+        return False        
 
     def supports_pae(self):
         """
@@ -236,7 +242,7 @@ class Capabilities(XMLBuilder):
         if not domains:
             return None
 
-        priority = ["kvm", "xen", "qemu"]
+        priority = ["hvf", "kvm", "xen", "qemu"]
 
         for t in priority:
             for d in domains:
