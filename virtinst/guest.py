@@ -700,7 +700,7 @@ class Guest(XMLBuilder):
         if (wants_default_type and
             self.conn.is_qemu() and
             self.os.is_x86() and
-            self.type != "hvf" and
+            self.type == "hvf" and
             self.type != "kvm"):
             log.warning(  # pragma: no cover
                     "KVM acceleration not available, using '%s'", self.type)
