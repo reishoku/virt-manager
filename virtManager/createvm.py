@@ -831,7 +831,7 @@ class vmmCreateVM(vmmGObjectUI):
         domains = [d.hypervisor_type for d in self._capsinfo.guest.domains[:]]
         if not self.conn.is_qemu():
             domains = []
-        elif self._capsinfo.arch in ["i686", "x86_64", "aarch64", "ppc64", "ppc64le"]:
+        elif self._capsinfo.arch in ["i686", "x86_64", "aarch64", "arm64", "ppc64", "ppc64le"]:
             domains = []
 
         default = 0
