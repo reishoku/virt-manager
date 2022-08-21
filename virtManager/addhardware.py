@@ -474,7 +474,7 @@ class vmmAddHardware(vmmGObjectUI):
             ret.append("scsi")
             ret.append("usb")
 
-            if guest.type in ["qemu", "kvm", "test"]:
+            if guest.type in ["qemu", "kvm", "hvf", "test"]:
                 ret.append("sd")
                 ret.append("virtio")
 
@@ -585,7 +585,7 @@ class vmmAddHardware(vmmGObjectUI):
             return []
 
         ret = []
-        if guest.type in ["kvm", "qemu", "vz", "test"]:
+        if guest.type in ["hvf", "kvm", "qemu", "vz", "test"]:
             ret.append("virtio")
         if guest.os.is_x86():
             if guest.os.is_q35():

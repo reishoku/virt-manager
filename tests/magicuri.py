@@ -43,6 +43,8 @@ def parse_options():
         capsfile = capsdir + "lxc.xml"
     elif hv == "vz":
         capsfile = capsdir + "vz.xml"
+    elif hv == "hvf":
+        capsfile = capsdir + "hvf.xml"
 
     if options.capsfile:
         capsfile = os.path.abspath(options.capsfile)

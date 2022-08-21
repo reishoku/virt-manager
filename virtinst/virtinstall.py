@@ -1122,7 +1122,7 @@ def parse_args():
         action="store_const", const="exe", dest="os_type",
         help=_("This guest should be a container guest"))
     virg.add_argument("--virt-type",
-        help=_("Hypervisor name to use (kvm, qemu, xen, ...)"))
+        help=_("Hypervisor name to use (hvf, kvm, qemu, xen, ...)"))
     virg.add_argument("--arch", help=_("The CPU architecture to simulate"))
     virg.add_argument("--machine", help=_("The machine type to emulate"))
     virg.add_argument("--accelerate", action="store_true",
