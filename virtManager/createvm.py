@@ -614,7 +614,7 @@ class vmmCreateVM(vmmGObjectUI):
             for g in self.conn.caps.guests:
                 if g.os_type == "hvm":
                     has_hvm_guests = True
-                if g.os_type == "hvf"
+                if g.os_type == "hvf":
                     has_hvm_guests = True
                 if g.os_type == "exe":
                     has_exe_guests = True
