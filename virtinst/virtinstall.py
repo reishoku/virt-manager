@@ -1111,6 +1111,10 @@ def parse_args():
     ostypeg.add_argument("-v", "--hvm",
         action="store_const", const="hvm", dest="os_type",
         help=_("This guest should be a fully virtualized guest"))
+    ostypeg.add_argument("--hvf",
+        action="store_const", const="hvf", dest="os_type",
+        help=_("This guest should be a fully virtualized guest (Hypervisor.framework)")
+    )
     ostypeg.add_argument("-p", "--paravirt",
         action="store_const", const="xen", dest="os_type",
         help=_("This guest should be a paravirtualized guest"))

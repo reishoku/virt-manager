@@ -614,6 +614,8 @@ class vmmCreateVM(vmmGObjectUI):
             for g in self.conn.caps.guests:
                 if g.os_type == "hvm":
                     has_hvm_guests = True
+                if g.os_type == "hvf"
+                    has_hvm_guests = True
                 if g.os_type == "exe":
                     has_exe_guests = True
 
@@ -713,6 +715,9 @@ class vmmCreateVM(vmmGObjectUI):
             for g in self.conn.caps.guests:
                 if g.os_type == "hvm":
                     gtype = "hvm"
+                    break
+                elif g.os_type == "hvf":
+                    gtype = "hvf"
                     break
 
         capsinfo = self.conn.caps.guest_lookup(os_type=gtype,
@@ -1186,6 +1191,8 @@ class vmmCreateVM(vmmGObjectUI):
         is_hvm = self.widget("vz-virt-type-hvm").get_active()
         if is_hvm:
             self._change_caps("hvm")
+        elif is_hvf:
+            self._change_caps("hvf")
         else:
             self._change_caps("exe")
 

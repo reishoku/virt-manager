@@ -46,6 +46,8 @@ class DomainOs(XMLBuilder):
         return self.os_type == "hvm"
     def is_xenpv(self):
         return self.os_type in ["xen", "linux"]
+    def is_hvf(self):
+        return self.os_type == "hvf"
     def is_container(self):
         return self.os_type == "exe"
 
