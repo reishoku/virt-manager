@@ -1109,11 +1109,6 @@ class vmmConnection(vmmGObject):
                 objs = self.list_pools()
                 cls = vmmStoragePool
                 pollcb = pollhelpers.fetch_pools
-            elif ptype == "nodedevs":
-                dopoll = pollnodedev
-                objs = self.list_nodedevs()
-                cls = vmmNodeDevice
-                pollcb = pollhelpers.fetch_nodedevs
             else:
                 dopoll = pollvm
                 objs = self.list_vms()
