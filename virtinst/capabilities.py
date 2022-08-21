@@ -50,7 +50,7 @@ class _CapsHost(XMLBuilder):
 
             label = None
             for baselabel in secmodel.baselabels:
-                if baselabel.type in ["qemu", "kvm"]:
+                if baselabel.type in ["qemu", "kvm", "hvf"]:
                     label = baselabel.content
                     break
             if not label:
@@ -144,7 +144,7 @@ class _CapsGuest(XMLBuilder):
         Return True if kvm guests can be installed
         """
         for d in self.domains:
-            if d.hypervisor_type == "kvm":
+            if d.hypervisor_type == "kvm" or d.hypervisor_type == "hvf":
                 return True
         return False
         

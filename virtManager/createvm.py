@@ -838,7 +838,7 @@ class vmmCreateVM(vmmGObjectUI):
         if self._capsinfo.hypervisor_type in domains:
             default = domains.index(self._capsinfo.hypervisor_type)
 
-        prios = ["kvm"]
+        prios = ["kvm", "hvf"]
         for domain in prios:
             if domain not in domains:
                 continue

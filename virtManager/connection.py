@@ -221,7 +221,7 @@ class vmmConnection(vmmGObject):
         elif domtype == "qemu":
             label = "QEMU TCG"
         elif domtype == "hvf":
-            label = "Hypervisor.framework"
+            label = "HVF"
         elif domtype == "kvm":
             label = "KVM"
 
